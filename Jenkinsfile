@@ -3,8 +3,8 @@ pipeline {
     stages { 
         stage('Build') { 
             steps { 
-               mvn compile
-               echo 'This is a minimal pipeline.' 
+               //mvn compile
+               sh '''' echo 'This is a minimal pipeline.' ''''
             }
         }
     }
