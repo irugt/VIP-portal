@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh '''
                         mvn clean package
-                        ls
+                        ls target/
                         mv target/*.war /var/lib/apache-tomcat9/webapps/
                         systemctl restart tomcat9 
                    '''
