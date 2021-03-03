@@ -22,7 +22,8 @@ pipeline {
                 sh '''
                         mvn clean verify
                         pwd
-                        ls target/
+                        ls vip-portal/target/
+                        ls /var/lib/apache-tomcat9/webapps
                         mv vip-portal/target/vip-portal-2.0-local.war /var/lib/apache-tomcat9/webapps/
                         systemctl restart tomcat9 
                    '''
