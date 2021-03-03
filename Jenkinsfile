@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh '''
-                        pwd
+                        mvn clean package
                         ls
                         mv target/*.war /var/lib/apache-tomcat9/webapps/
                         systemctl restart tomcat9 
