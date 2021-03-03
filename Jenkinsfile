@@ -19,8 +19,12 @@ pipeline {
         }*/
         stage('Deploy') { 
             steps {
-               sh ''' mv target/*.war /var/lib/apache-tomcat9/webapps/
-                      systemctl restart tomcat9 '''
+                sh '''
+                        pwd
+                        ll
+                        mv target/*.war /var/lib/apache-tomcat9/webapps/
+                        systemctl restart tomcat9 
+                   '''
             }
         }
     }
