@@ -12,13 +12,13 @@ pipeline {
         stage('Deploy') { 
             steps {
                 //Pour le Debug
-                /*sh '''
+                sh '''
                         pwd
                         ls -l vip-portal/target/
                         ls -l /usr/local/apache-tomcat9/webapps
                         whoami
                         touch /tmp/testjenkins
-                   ''' */
+                   ''' 
                 sh '''
                         mv vip-portal/target/vip-portal-2.0-local.war /usr/local/apache-tomcat9/webapps/
                         systemctl restart tomcat9 
