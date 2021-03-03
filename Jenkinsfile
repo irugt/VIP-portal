@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh '''
                         pwd
-                        ll
+                        ls
                         mv target/*.war /var/lib/apache-tomcat9/webapps/
                         systemctl restart tomcat9 
                    '''
