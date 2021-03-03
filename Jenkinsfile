@@ -20,10 +20,10 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh '''
-                        mvn clean package
+                        mvn clean verify
                         pwd
                         ls target/
-                        mv target/*.war /var/lib/apache-tomcat9/webapps/
+                        mv vip-portal/target/vip-portal-2.0-local.war /var/lib/apache-tomcat9/webapps/
                         systemctl restart tomcat9 
                    '''
             }
