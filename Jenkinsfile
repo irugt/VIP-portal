@@ -14,8 +14,8 @@ pipeline {
                 //Pour le Debug
                 sh '''
                         pwd
-                        ls vip-portal/target/
-                        ls /usr/local/apache-tomcat9/webapps
+                        ls -l vip-portal/target/
+                        ls -l /usr/local/apache-tomcat9/webapps
                         whoami
                    ''' 
                 sh '''
