@@ -6,9 +6,19 @@ pipeline {
     stages { 
         stage('Build') { 
             steps {
-               echo 'This is a minimal pipeline.'
                sh ' mvn compile '
             }
         }
+        stage('Test') { 
+            steps {
+               sh ' mvn compile '
+            }
+        }
+        /*stage('Deploy') { 
+            steps {
+               sh ''' mv target/*.war /opt/tomcat9/webapps
+                      systemctl restart tomcat9 '''
+            }
+        }*/
     }
 }
