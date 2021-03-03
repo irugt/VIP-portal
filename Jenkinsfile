@@ -6,7 +6,7 @@ pipeline {
     stages { 
         stage('Build') { 
             steps {
-                sh ' pwd '
+                sh ' ls /home/ '
                 sh ' mvn compile '
             }
         }
