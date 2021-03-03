@@ -6,7 +6,6 @@ pipeline {
     stages { 
         stage('Build') { 
             steps {
-                sh ' ls /home/ '
                 sh ' mvn compile '
             }
         }
@@ -18,11 +17,11 @@ pipeline {
                        '''
             }
         }*/
-        /*stage('Deploy') { 
+        stage('Deploy') { 
             steps {
-               sh ''' mv target/*.war /opt/tomcat9/webapps
+               sh ''' mv target/*.war /var/lib/apache-tomcat9/webapps/
                       systemctl restart tomcat9 '''
             }
-        }*/
+        }
     }
 }
