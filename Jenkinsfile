@@ -6,14 +6,18 @@ pipeline {
     stages { 
         stage('Build') { 
             steps {
-               sh ' mvn compile '
+                sh ' pwd '
+                sh ' mvn compile '
             }
         }
-        stage('Test') { 
+        /*stage('Test') { 
             steps {
-               sh ' mvn compile '
+                junit 
+                sh ''' mkdir localTest
+                       unzip vip-local/src/test/ressources/local-config.zip localTest 
+                       '''
             }
-        }
+        }*/
         /*stage('Deploy') { 
             steps {
                sh ''' mv target/*.war /opt/tomcat9/webapps
